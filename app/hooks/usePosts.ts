@@ -8,7 +8,7 @@ const usePosts = (userId?: string) => {
     const { data, error, isLoading, mutate } = useSWR(url, fetcher);
 
     return {
-        data: data || [],
+        data,
         error,
         isLoading,
         mutate,
