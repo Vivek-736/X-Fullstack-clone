@@ -1,4 +1,3 @@
-"use client";
 import useSWR from "swr";
 import fetcher from "../libs/fetcher";
 
@@ -8,7 +7,7 @@ const usePost = (postId?: string) => {
     const { data, error, isLoading, mutate } = useSWR(url, fetcher);
 
     return {
-        data,
+        data: data || [],
         error,
         isLoading,
         mutate,
