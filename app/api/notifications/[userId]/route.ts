@@ -1,10 +1,9 @@
 import { NextRequest, NextResponse } from "next/server";
 import prisma from "@/app/libs/prismadb";
 
-export async function GET(req: NextRequest) {
+export async function GET(req: NextRequest, { params }: { params: { userId: string } }) {
     try {
-        const { searchParams } = new URL(req.url);
-        const userId = searchParams.get("userId");
+        const { userId } = await params;
 
         if (!userId || typeof userId !== "string") {
             return NextResponse.json({ error: "Invalid ID" }, { status: 400 });
