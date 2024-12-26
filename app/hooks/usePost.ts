@@ -5,12 +5,12 @@ import fetcher from "../libs/fetcher";
 const usePost = (postId?: string) => {
     const url = postId ? `/api/posts/${postId}` : null;
 
-    const { data, error, isLoading, mutate } = useSWR(url, fetcher);
+    const { data, error, mutate } = useSWR(url, fetcher);
 
     return {
-        data: data || [],
+        data,
         error,
-        isLoading,
+        isLoading: !data && !error,
         mutate,
     };
 };
