@@ -10,6 +10,7 @@ import EditModal from "./models/EditModal";
 export const metadata: Metadata = {
   title: "X - It's What's happening / X",
   description: "Connect with friends and the world around you on X.",
+  viewport: 'width=device-width, initial-scale=1.0'
 };
 
 export default function RootLayout({
